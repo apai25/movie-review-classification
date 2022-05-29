@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.text_upload.label(class='form-group') }}
+            {{ form.text_upload(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class='btn' 'btn-primary') }}
+        </div>
+    </form>
+    {% if has_predicted %}
+        <h1>The model's prediction is: {{ prediction }}</h1>
+    {% endif %}
+</div>
+{% endblock content %}
